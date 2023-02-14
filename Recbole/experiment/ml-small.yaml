@@ -14,6 +14,10 @@ user_inter_num_interval: "[10,inf)"
 item_inter_num_interval: "[10,inf)"
 
 
+embedding_size: 2048
+learning_rate: 1e-4
+
+
 eval_args:
     split: {'RS': [8,1,1]}
     group_by: user
