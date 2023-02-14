@@ -5,10 +5,13 @@ from recbole.data import create_dataset, data_preparation
 
 import csv
 import pandas as pd
+import numpy as np
+import tensorflow as tf
+from pathlib import Path
+
 
 """
 TODO:
-- make the paths work for any OS.
 - add predicted rating column for each recommendation.
 - add algorithm fine-tuning
 """
@@ -22,19 +25,28 @@ def BPR(data_filename, config_file_list):
 
 
 
-def ExportRecs(user_id, external_item_ids, item_file_path):
+def ExportRecs(userId_list, external_item_ids, scores, item_file_path):
 
-    user_rec_list = []
 
     with open(item_file_path, encoding='utf-8') as fd:
         rd = csv.reader(fd, delimiter="\t", quotechar='"')
-        for row in rd:
-            if (row[0] in external_item_ids):
-                user_rec_list.append(row)
 
-    user_recs_df = pd.DataFrame(user_rec_list, columns = ['movieId', 'title', 'year', 'genres'])
-    file_name = 'user_' + str(user_id) + '_recommendations.csv'
-    user_recs_df.to_csv(file_name)
+        for i in range(len(userId_list)):
+            user_rec_list = []
+
+            rec_items = list(external_item_ids[i])
+            rec_item_scores = scores[i].tolist()
+            rec_item_scores = ['%.2f' % elem for elem in rec_item_scores]
+
+            for row in rd:
+                if (row[0] in rec_items):
+                    new_row = row
+                    new_row.append(rec_item_scores[rec_items.index(row[0])])
+                    user_rec_list.append(new_row)
+
+            user_recs_df = pd.DataFrame(user_rec_list, columns = ['movieId', 'title', 'year', 'genres', 'prediction'])
+            file_name = 'user_' + str(userId_list[i]) + '_recommendations.csv'
+            user_recs_df.to_csv(file_name)
 
 
 
@@ -50,12 +62,14 @@ if __name__ == '__main__':
         model_file='saved\BPR-Feb-13-2023_14-18-04.pth',
     )
 
-    uid_series = dataset.token2id(dataset.uid_field, ['0'])
+    userId_list = ['0']
+
+    uid_series = dataset.token2id(dataset.uid_field, userId_list)
 
     topk_score, topk_iid_list = full_sort_topk(uid_series, model, test_data, k=20, device=config['device'])
     external_item_ids = dataset.id2token(dataset.iid_field, topk_iid_list.cpu())
 
-    
-    ExportRecs(0, external_item_ids, 'ml-small\ml-small.item')
+
+    ExportRecs(userId_list, external_item_ids, topk_score, Path("ml-small/ml-small.item"))
     
 
