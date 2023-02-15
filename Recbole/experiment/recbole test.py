@@ -28,6 +28,13 @@ def BPR(data_filename, config_file_list):
     run_recbole(dataset=data_filename, model='BPR', config_file_list=[config_file_list],
                 config_dict = config_dict, saved=False)
 
+def ItemKNN(data_filename, config_file_list):
+
+    run_recbole(dataset=data_filename, model='ItemKNN', config_file_list=[config_file_list], saved=False)
+
+def Pop(data_filename, config_file_list):
+
+    run_recbole(dataset=data_filename, model='Pop', config_file_list=[config_file_list], saved=False)
 
 
 
@@ -64,7 +71,11 @@ if __name__ == '__main__':
     # train_data, valid_data, test_data = data_preparation(config, dataset)
 
 
-    BPR('ml-small', 'ml-small.yaml')
+    # BPR('ml-small', 'ml-small.yaml')
+
+    # ItemKNN('ml-small', 'ml-small.yaml')
+    Pop('ml-small', 'ml-small.yaml')
+
 
     # config, model, dataset, train_data, valid_data, test_data = load_data_and_model(
     #     model_file='saved\BPR-Feb-13-2023_14-18-04.pth',
