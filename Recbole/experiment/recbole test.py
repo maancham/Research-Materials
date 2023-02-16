@@ -69,9 +69,8 @@ def ExportRecs(userId_list, external_item_ids, scores, item_file_path):
 
 if __name__ == '__main__':
 
-    ## FM => SVD++
     ## NeuMF => NCF
-    models = ['Pop', 'ItemKNN', 'BPR', 'NeuMF',
+    models = ['Pop', 'ItemKNN', 'BPR', 'DMF', 'NeuMF',
             'NAIS', 'FISM', 'NGCF', 'LightGCN', 'ENMF',
             'CDAE', 'MultiVAE']
 
@@ -83,6 +82,8 @@ if __name__ == '__main__':
             params_file_name = model + '.yaml'
 
         RunModel('ml-small', model, 'ml-small.yaml', params_file_name, should_save=True)
+
+
 
 
 
