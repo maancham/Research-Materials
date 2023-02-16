@@ -12,9 +12,9 @@ import yaml
 
 """
 TODO:
-- fine tuning still left?
 - export results for multiple algorithms
 - add new files (run model, model names, prediction)
+- do we need fine-tuning at this stage?
 """
 
 
