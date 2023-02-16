@@ -15,26 +15,30 @@ TODO:
 - add other algorithms
 - fine tuning still left?
 - export results for multiple algorithms
+- add new files (run model, model names, prediction)
 """
 
 
 
 
-def BPR(data_filename, config_file_list):
 
-    with open(Path("model params/BPR.yaml")) as params_file:
-        config_dict = yaml.full_load(params_file)
 
-    run_recbole(dataset=data_filename, model='BPR', config_file_list=[config_file_list],
-                config_dict = config_dict, saved=False)
+def RunModel(data_filename, model_name, config_file_list, params_file_name, should_save=False):
 
-def ItemKNN(data_filename, config_file_list):
+    # if(params_file_name):
+    #     model_params_dir = "model params"
+    #     params_file_dir = model_params_dir + '/' + params_file_name
+    #     with open(Path(params_file_dir)) as params_file:
+    #         config_dict = yaml.full_load(params_file)
+    # else:
+    #     config_dict = None
 
-    run_recbole(dataset=data_filename, model='ItemKNN', config_file_list=[config_file_list], saved=False)
+    config_dict = None
+    
+    run_recbole(dataset=data_filename, model=model_name, config_file_list=[config_file_list],
+                config_dict = config_dict, saved=should_save)
 
-def Pop(data_filename, config_file_list):
 
-    run_recbole(dataset=data_filename, model='Pop', config_file_list=[config_file_list], saved=False)
 
 
 
@@ -71,10 +75,21 @@ if __name__ == '__main__':
     # train_data, valid_data, test_data = data_preparation(config, dataset)
 
 
-    # BPR('ml-small', 'ml-small.yaml')
+    ## FM => SVD++
+    ## NeuMF => NCF
+    models = ['Pop', 'ItemKNN', 'BPR', 'FM', 'NeuMF']
 
-    # ItemKNN('ml-small', 'ml-small.yaml')
-    Pop('ml-small', 'ml-small.yaml')
+    for model in models:
+
+        if (model in ['Pop', 'ItemKNN']):
+            params_file_name = None
+        else:
+            params_file_name = model + '.yaml'
+
+        RunModel('ml-small', model, 'ml-small.yaml', params_file_name, should_save=True)
+
+
+
 
 
     # config, model, dataset, train_data, valid_data, test_data = load_data_and_model(
