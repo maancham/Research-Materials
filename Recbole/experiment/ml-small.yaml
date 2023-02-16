@@ -7,7 +7,6 @@ load_col:
     inter: [user_id, item_id, rating, timestamp]
 
 
-# data_path: C:\Users\hoomo\OneDrive\Documents\GitHub\Research-Materials\Recbole\experiment
 dataset: ml-small
 
 user_inter_num_interval: "[10,inf)"
