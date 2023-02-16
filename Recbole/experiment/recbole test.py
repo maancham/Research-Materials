@@ -12,7 +12,6 @@ import yaml
 
 """
 TODO:
-- add other algorithms
 - fine tuning still left?
 - export results for multiple algorithms
 - add new files (run model, model names, prediction)
@@ -70,14 +69,11 @@ def ExportRecs(userId_list, external_item_ids, scores, item_file_path):
 
 if __name__ == '__main__':
 
-    # config = Config(model='BPR', dataset='ml-small', config_file_list=['ml-small.yaml'])
-    # dataset = create_dataset(config)
-    # train_data, valid_data, test_data = data_preparation(config, dataset)
-
-
     ## FM => SVD++
     ## NeuMF => NCF
-    models = ['Pop', 'ItemKNN', 'BPR', 'FM', 'NeuMF']
+    models = ['Pop', 'ItemKNN', 'BPR', 'NeuMF',
+            'NAIS', 'FISM', 'NGCF', 'LightGCN', 'ENMF',
+            'CDAE', 'MultiVAE']
 
     for model in models:
 
@@ -87,8 +83,6 @@ if __name__ == '__main__':
             params_file_name = model + '.yaml'
 
         RunModel('ml-small', model, 'ml-small.yaml', params_file_name, should_save=True)
-
-
 
 
 
