@@ -1,0 +1,21 @@
+,movieId,title,year,genres,prediction
+0,60040,"Incredible Hulk, The ",2008,Action Sci-Fi,19.86
+1,68237,Moon ,2009,Drama Mystery Sci-Fi Thriller,19.08
+2,69844,Harry Potter and the Half-Blood Prince ,2009,Adventure Fantasy Mystery Romance IMAX,19.24
+3,79702,Scott Pilgrim vs. the World ,2010,Action Comedy Fantasy Musical Romance,20.64
+4,80463,"Social Network, The ",2010,Drama,19.14
+5,81564,Megamind ,2010,Action Animation Children Comedy Sci-Fi IMAX,19.63
+6,82461,Tron: Legacy ,2010,Action Adventure Sci-Fi IMAX,22.79
+7,91630,Mission: Impossible - Ghost Protocol ,2011,Action Adventure Thriller IMAX,22.55
+8,91658,"Girl with the Dragon Tattoo, The ",2011,Drama Thriller,20.02
+9,95510,"Amazing Spider-Man, The ",2012,Action Adventure Sci-Fi IMAX,19.51
+10,103141,Monsters University ,2013,Adventure Animation Comedy,21.16
+11,107406,Snowpiercer ,2013,Action Drama Sci-Fi,21.19
+12,109374,"Grand Budapest Hotel, The ",2014,Comedy Drama,22.37
+13,111362,X-Men: Days of Future Past ,2014,Action Adventure Sci-Fi,18.57
+14,111743,A Million Ways to Die in the West ,2014,Comedy Western,18.64
+15,112623,Dawn of the Planet of the Apes ,2014,Sci-Fi,20.42
+16,135536,Suicide Squad ,2016,Action Crime Sci-Fi,21.63
+17,135569,Star Trek Beyond ,2016,Action Adventure Sci-Fi,22.54
+18,136864,Batman v Superman: Dawn of Justice ,2016,Action Adventure Fantasy Sci-Fi,22.56
+19,176371,Blade Runner 2049 ,2017,Sci-Fi,18.55

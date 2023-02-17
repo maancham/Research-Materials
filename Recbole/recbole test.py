@@ -7,12 +7,10 @@ import csv
 import pandas as pd
 import numpy as np
 from pathlib import Path
-import yaml
 
 
 """
 TODO:
-- export results for multiple algorithms
 - add new files (run model, model names, prediction)
 - do we need fine-tuning at this stage?
 """
@@ -39,10 +37,21 @@ def RunModel(data_filename, model_name, config_file_list, params_file_name, shou
 
 
 
+def ModelHandler(models):
+
+    for model in models:
+
+        if (model in ['Pop', 'ItemKNN']):
+            params_file_name = None
+        else:
+            params_file_name = model + '.yaml'
+
+        RunModel('ml-small', model, 'ml-small.yaml', params_file_name, should_save=True)
 
 
-def ExportRecs(userId_list, external_item_ids, scores, item_file_path):
 
+
+def ExportAlgoRec(userId_list, algo_name, external_item_ids, scores, item_file_path):
 
     with open(item_file_path, encoding='utf-8') as fd:
         rd = csv.reader(fd, delimiter="\t", quotechar='"')
@@ -59,46 +68,47 @@ def ExportRecs(userId_list, external_item_ids, scores, item_file_path):
                     new_row = row
                     new_row.append(rec_item_scores[rec_items.index(row[0])])
                     user_rec_list.append(new_row)
+            
 
             user_recs_df = pd.DataFrame(user_rec_list, columns = ['movieId', 'title', 'year', 'genres', 'prediction'])
-            file_name = 'user_' + str(userId_list[i]) + '_recommendations.csv'
-            user_recs_df.to_csv(file_name)
+            file_name = 'user_' + str(userId_list[i]) + '_' + algo_name + '_recommendations.csv'
+            user_recs_df.to_csv(Path('output/' + file_name))
+
+
+
+def ExportRecsHandler(userId_list, k):
+
+    saved_folder_dir = Path("saved")
+    saved_model_names = []
+    for item in saved_folder_dir.iterdir():
+        saved_model_names.append(f"{item}")
+
+    for saved_model_name in saved_model_names:
+        config, model, dataset, train_data, valid_data, test_data = load_data_and_model(
+            model_file=Path(saved_model_name),
+        )
+        uid_series = dataset.token2id(dataset.uid_field, userId_list)
+        topk_score, topk_iid_list = full_sort_topk(uid_series, model, test_data, k=k, device=config['device'])
+        external_item_ids = dataset.id2token(dataset.iid_field, topk_iid_list.cpu())
+        algo_name = saved_model_name.split('/')[-1].split('-')[0]
+        ExportAlgoRec(userId_list, algo_name, external_item_ids, topk_score, Path("dataset/ml-small/ml-small.item"))
 
 
 
 
 if __name__ == '__main__':
 
+    
     ## NeuMF => NCF
     models = ['Pop', 'ItemKNN', 'BPR', 'DMF', 'NeuMF',
             'NAIS', 'FISM', 'NGCF', 'LightGCN', 'ENMF',
             'CDAE', 'MultiVAE']
 
-    for model in models:
+    # ModelHandler(models)
 
-        if (model in ['Pop', 'ItemKNN']):
-            params_file_name = None
-        else:
-            params_file_name = model + '.yaml'
+    userId_list = ['0']
 
-        RunModel('ml-small', model, 'ml-small.yaml', params_file_name, should_save=True)
+    ExportRecsHandler(userId_list, 20)
 
 
-
-
-
-    # config, model, dataset, train_data, valid_data, test_data = load_data_and_model(
-    #     model_file='saved\BPR-Feb-13-2023_14-18-04.pth',
-    # )
-
-    # userId_list = ['0']
-
-    # uid_series = dataset.token2id(dataset.uid_field, userId_list)
-
-    # topk_score, topk_iid_list = full_sort_topk(uid_series, model, test_data, k=20, device=config['device'])
-    # external_item_ids = dataset.id2token(dataset.iid_field, topk_iid_list.cpu())
-
-
-    # ExportRecs(userId_list, external_item_ids, topk_score, Path("ml-small/ml-small.item"))
-    
 

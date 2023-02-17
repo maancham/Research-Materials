@@ -1,0 +1,21 @@
+,movieId,title,year,genres,prediction
+0,260,Star Wars: Episode IV - A New Hope ,1977,Action Adventure Sci-Fi,0.10
+1,296,Pulp Fiction ,1994,Comedy Crime Drama Thriller,0.09
+2,356,Forrest Gump ,1994,Comedy Drama Romance War,0.09
+3,527,Schindler's List ,1993,Drama War,0.08
+4,593,"Silence of the Lambs, The ",1991,Crime Horror Thriller,0.08
+5,1198,Raiders of the Lost Ark ,Indiana Jones and the Raiders of the Lost Ark,Action Adventure,0.09
+6,1210,Star Wars: Episode VI - Return of the Jedi ,1983,Action Adventure Sci-Fi,0.09
+7,2329,American History X ,1998,Crime Drama,0.08
+8,2858,American Beauty ,1999,Drama Romance,0.09
+9,2959,Fight Club ,1999,Action Crime Drama Thriller,0.10
+10,4226,Memento ,2000,Mystery Thriller,0.09
+11,4878,Donnie Darko ,2001,Drama Mystery Sci-Fi Thriller,0.08
+12,4886,"Monsters, Inc. ",2001,Adventure Animation Children Comedy Fantasy,0.08
+13,4973,Amelie ,"Fabuleux destin d'Amélie Poulain, Le",Comedy Romance,0.08
+14,5445,Minority Report ,2002,Action Crime Mystery Sci-Fi Thriller,0.08
+15,5816,Harry Potter and the Chamber of Secrets ,2002,Adventure Fantasy,0.08
+16,6365,"Matrix Reloaded, The ",2003,Action Adventure Sci-Fi Thriller IMAX,0.08
+17,6377,Finding Nemo ,2003,Adventure Animation Children Comedy,0.09
+18,6539,Pirates of the Caribbean: The Curse of the Black Pearl ,2003,Action Adventure Comedy Fantasy,0.10
+19,7361,Eternal Sunshine of the Spotless Mind ,2004,Drama Romance Sci-Fi,0.09

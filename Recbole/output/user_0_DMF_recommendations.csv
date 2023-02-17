@@ -1,0 +1,21 @@
+,movieId,title,year,genres,prediction
+0,59784,Kung Fu Panda ,2008,Action Animation Children Comedy IMAX,0.91
+1,69122,"Hangover, The ",2009,Comedy Crime,0.92
+2,69844,Harry Potter and the Half-Blood Prince ,2009,Adventure Fantasy Mystery Romance IMAX,0.95
+3,74789,Alice in Wonderland ,2010,Adventure Fantasy IMAX,0.91
+4,79702,Scott Pilgrim vs. the World ,2010,Action Comedy Fantasy Musical Romance,0.90
+5,80463,"Social Network, The ",2010,Drama,0.91
+6,81564,Megamind ,2010,Action Animation Children Comedy Sci-Fi IMAX,0.90
+7,95441,Ted ,2012,Comedy Fantasy,0.90
+8,102903,Now You See Me ,2013,Crime Mystery Thriller,0.92
+9,103141,Monsters University ,2013,Adventure Animation Comedy,0.90
+10,103335,Despicable Me 2 ,2013,Animation Children Comedy IMAX,0.93
+11,106918,"Secret Life of Walter Mitty, The ",2013,Adventure Comedy Drama,0.89
+12,106920,Her ,2013,Drama Romance Sci-Fi,0.89
+13,109374,"Grand Budapest Hotel, The ",2014,Comedy Drama,0.94
+14,111743,A Million Ways to Die in the West ,2014,Comedy Western,0.92
+15,112552,Whiplash ,2014,Drama,0.94
+16,112556,Gone Girl ,2014,Drama Thriller,0.89
+17,114935,Predestination ,2014,Action Mystery Sci-Fi Thriller,0.90
+18,134368,Spy ,2015,Action Comedy Crime,0.89
+19,135536,Suicide Squad ,2016,Action Crime Sci-Fi,0.89
