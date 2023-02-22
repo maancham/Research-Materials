@@ -3,6 +3,7 @@ from recbole.utils.case_study import full_sort_scores, full_sort_topk
 from recbole.config import Config
 from recbole.data import create_dataset, data_preparation
 
+import sys
 import csv
 import pandas as pd
 import numpy as np
@@ -38,8 +39,9 @@ def RunModel(data_filename, model_name, config_file_list, params_file_name, shou
 
 
 
-def ModelHandler(models):
+def ModelHandler(models, dataset):
 
+    dataset_config = dataset + '.yaml'
     for model in models:
 
         if (model in ['Pop', 'ItemKNN']):
@@ -47,7 +49,7 @@ def ModelHandler(models):
         else:
             params_file_name = model + '.yaml'
 
-        RunModel('ml-small', model, 'ml-small.yaml', params_file_name, should_save=True)
+        RunModel(dataset, model, dataset_config, params_file_name, should_save=True)
 
 
 
@@ -98,24 +100,30 @@ def ExportRecsHandler(userId_list, k):
         topk_score, topk_iid_list = full_sort_topk(uid_series, model, test_data, k=k, device=config['device'])
         external_item_ids = dataset.id2token(dataset.iid_field, topk_iid_list.cpu())
         algo_name = saved_model_name.split('/')[-1].split('-')[0]
-        ExportAlgoRec(userId_list, algo_name, external_item_ids, topk_score, Path("dataset/ml-small/ml-small.item"))
+        item_file_path = Path('dataset/' + dataset.dataset_name + '/' + dataset.dataset_name + '.item')
+        ExportAlgoRec(userId_list, algo_name, external_item_ids, topk_score, item_file_path)
 
 
 
 
 if __name__ == '__main__':
 
+    if (len(sys.argv) != 2):
+        raise ValueError("Must (only) input dataset name!")
     
+    dataset_name = sys.argv[1:][0]
+
     ## NeuMF => NCF
     models = ['Pop', 'ItemKNN', 'BPR', 'DMF', 'NeuMF',
             'NAIS', 'FISM', 'NGCF', 'LightGCN', 'ENMF',
             'CDAE', 'MultiVAE']
+    
 
-    # ModelHandler(models)
+    ModelHandler(models, str(dataset_name))
 
-    userId_list = ['0', '5']
+    # userId_list = ['0', '5']
 
-    ExportRecsHandler(userId_list, 20)
+    # ExportRecsHandler(userId_list, 20)
 
 
 
