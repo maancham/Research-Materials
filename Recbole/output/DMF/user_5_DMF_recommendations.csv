@@ -1,0 +1,21 @@
+,movieId,title,year,genres,prediction
+0,10,GoldenEye ,1995,Action Adventure Thriller,0.95
+1,32,Twelve Monkeys ,a.k.a. 12 Monkeys,Mystery Sci-Fi Thriller,0.96
+2,47,Seven ,a.k.a. Se7en,Mystery Thriller,0.96
+3,161,Crimson Tide ,1995,Drama Thriller War,0.97
+4,165,Die Hard: With a Vengeance ,1995,Action Crime Thriller,0.98
+5,292,Outbreak ,1995,Action Drama Sci-Fi Thriller,0.96
+6,329,Star Trek: Generations ,1994,Adventure Drama Sci-Fi,0.95
+7,339,While You Were Sleeping ,1995,Comedy Romance,0.96
+8,356,Forrest Gump ,1994,Comedy Drama Romance War,0.98
+9,364,"Lion King, The ",1994,Adventure Animation Children Drama Musical IMAX,0.96
+10,377,Speed ,1994,Action Romance Thriller,0.96
+11,434,Cliffhanger ,1993,Action Adventure Thriller,0.97
+12,454,"Firm, The ",1993,Drama Thriller,0.95
+13,480,Jurassic Park ,1993,Action Adventure Sci-Fi Thriller,0.97
+14,500,Mrs. Doubtfire ,1993,Comedy Drama,0.96
+15,588,Aladdin ,1992,Adventure Animation Children Comedy Musical,0.97
+16,593,"Silence of the Lambs, The ",1991,Crime Horror Thriller,0.97
+17,648,Mission: Impossible ,1996,Action Adventure Mystery Thriller,0.96
+18,736,Twister ,1996,Action Adventure Romance Thriller,0.96
+19,780,Independence Day ,a.k.a. ID4,Action Adventure Sci-Fi Thriller,0.97

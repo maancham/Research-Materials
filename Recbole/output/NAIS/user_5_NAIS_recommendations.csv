@@ -1,0 +1,21 @@
+,movieId,title,year,genres,prediction
+0,11,"American President, The ",1995,Comedy Drama Romance,0.98
+1,17,Sense and Sensibility ,1995,Drama Romance,0.98
+2,62,Mr. Holland's Opus ,1995,Drama,0.99
+3,161,Crimson Tide ,1995,Drama Thriller War,0.98
+4,165,Die Hard: With a Vengeance ,1995,Action Crime Thriller,0.98
+5,225,Disclosure ,1994,Drama Thriller,0.99
+6,236,French Kiss ,1995,Action Comedy Romance,0.97
+7,237,Forget Paris ,1995,Comedy Romance,0.96
+8,266,Legends of the Fall ,1994,Drama Romance War Western,0.97
+9,272,"Madness of King George, The ",1994,Comedy Drama,0.97
+10,292,Outbreak ,1995,Action Drama Sci-Fi Thriller,0.99
+11,356,Forrest Gump ,1994,Comedy Drama Romance War,1.00
+12,377,Speed ,1994,Action Romance Thriller,0.97
+13,434,Cliffhanger ,1993,Action Adventure Thriller,0.97
+14,454,"Firm, The ",1993,Drama Thriller,0.99
+15,480,Jurassic Park ,1993,Action Adventure Sci-Fi Thriller,0.97
+16,509,"Piano, The ",1993,Drama Romance,0.97
+17,552,"Three Musketeers, The ",1993,Action Adventure Comedy Romance,0.97
+18,587,Ghost ,1990,Comedy Drama Fantasy Romance Thriller,0.98
+19,593,"Silence of the Lambs, The ",1991,Crime Horror Thriller,0.98

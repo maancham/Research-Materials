@@ -1,5 +1,6 @@
 import yaml
 from pathlib import Path
+import pandas as pd
 
 
 
@@ -8,15 +9,17 @@ model_params_dir = "model params"
 params_file_dir = model_params_dir + '/' + params_file_name
 
 
-with open(Path(params_file_dir)) as params_file:
-    config_dict = yaml.full_load(params_file)
 
 # print(config_dict)
 
 # print(Path('saved\BPR-Feb-16-2023_20-27-54.pth'))
 
 
-saved_folder = Path("saved")
-for item in saved_folder.iterdir():
-    # print(type(f"{item}"))
-    a = f"{item}"
+new_dir = 'output/user_' + '0' 
+output_dir = Path(new_dir)
+output_dir.mkdir(parents=True, exist_ok=True)
+
+user_recs_df = pd.DataFrame([1,2,3], [4,5,6])
+file_name = 'user_0' + '_' + 'BPR' + '_recommendations.csv'
+user_recs_df.to_csv(output_dir / file_name)
+

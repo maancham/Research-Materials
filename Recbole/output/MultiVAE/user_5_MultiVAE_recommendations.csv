@@ -1,0 +1,21 @@
+,movieId,title,year,genres,prediction
+0,47,Seven ,a.k.a. Se7en,Mystery Thriller,5.71
+1,161,Crimson Tide ,1995,Drama Thriller War,5.83
+2,225,Disclosure ,1994,Drama Thriller,5.32
+3,266,Legends of the Fall ,1994,Drama Romance War Western,5.36
+4,272,"Madness of King George, The ",1994,Comedy Drama,5.34
+5,292,Outbreak ,1995,Action Drama Sci-Fi Thriller,5.22
+6,329,Star Trek: Generations ,1994,Adventure Drama Sci-Fi,5.20
+7,337,What's Eating Gilbert Grape ,1993,Drama,5.32
+8,339,While You Were Sleeping ,1995,Comedy Romance,5.31
+9,356,Forrest Gump ,1994,Comedy Drama Romance War,6.23
+10,364,"Lion King, The ",1994,Adventure Animation Children Drama Musical IMAX,5.33
+11,377,Speed ,1994,Action Romance Thriller,5.40
+12,454,"Firm, The ",1993,Drama Thriller,5.70
+13,480,Jurassic Park ,1993,Action Adventure Sci-Fi Thriller,5.81
+14,500,Mrs. Doubtfire ,1993,Comedy Drama,5.44
+15,509,"Piano, The ",1993,Drama Romance,5.77
+16,539,Sleepless in Seattle ,1993,Comedy Drama Romance,5.47
+17,587,Ghost ,1990,Comedy Drama Fantasy Romance Thriller,5.46
+18,588,Aladdin ,1992,Adventure Animation Children Comedy Musical,5.30
+19,593,"Silence of the Lambs, The ",1991,Crime Horror Thriller,6.18

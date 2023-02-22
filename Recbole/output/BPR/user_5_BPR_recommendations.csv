@@ -1,0 +1,21 @@
+,movieId,title,year,genres,prediction
+0,25,Leaving Las Vegas ,1995,Drama Romance,4.89
+1,32,Twelve Monkeys ,a.k.a. 12 Monkeys,Mystery Sci-Fi Thriller,4.41
+2,47,Seven ,a.k.a. Se7en,Mystery Thriller,4.51
+3,161,Crimson Tide ,1995,Drama Thriller War,5.34
+4,225,Disclosure ,1994,Drama Thriller,4.51
+5,266,Legends of the Fall ,1994,Drama Romance War Western,4.50
+6,272,"Madness of King George, The ",1994,Comedy Drama,4.53
+7,292,Outbreak ,1995,Action Drama Sci-Fi Thriller,4.84
+8,329,Star Trek: Generations ,1994,Adventure Drama Sci-Fi,4.63
+9,339,While You Were Sleeping ,1995,Comedy Romance,4.51
+10,356,Forrest Gump ,1994,Comedy Drama Romance War,4.89
+11,377,Speed ,1994,Action Romance Thriller,4.63
+12,434,Cliffhanger ,1993,Action Adventure Thriller,4.68
+13,454,"Firm, The ",1993,Drama Thriller,5.36
+14,480,Jurassic Park ,1993,Action Adventure Sci-Fi Thriller,4.61
+15,509,"Piano, The ",1993,Drama Romance,5.02
+16,539,Sleepless in Seattle ,1993,Comedy Drama Romance,4.78
+17,587,Ghost ,1990,Comedy Drama Fantasy Romance Thriller,4.82
+18,588,Aladdin ,1992,Adventure Animation Children Comedy Musical,4.54
+19,593,"Silence of the Lambs, The ",1991,Crime Horror Thriller,4.95

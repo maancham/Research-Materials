@@ -7,6 +7,7 @@ import csv
 import pandas as pd
 import numpy as np
 from pathlib import Path
+import yaml
 
 
 """
@@ -22,13 +23,13 @@ TODO:
 
 def RunModel(data_filename, model_name, config_file_list, params_file_name, should_save=False):
 
-    # if(params_file_name):
-    #     model_params_dir = "model params"
-    #     params_file_dir = model_params_dir + '/' + params_file_name
-    #     with open(Path(params_file_dir)) as params_file:
-    #         config_dict = yaml.full_load(params_file)
-    # else:
-    #     config_dict = None
+    if(params_file_name):
+        model_params_dir = "model params"
+        params_file_dir = model_params_dir + '/' + params_file_name
+        with open(Path(params_file_dir)) as params_file:
+            config_dict = yaml.full_load(params_file)
+    else:
+        config_dict = None
 
     config_dict = None
     
@@ -53,6 +54,10 @@ def ModelHandler(models):
 
 def ExportAlgoRec(userId_list, algo_name, external_item_ids, scores, item_file_path):
 
+    new_dir = 'output/' + algo_name
+    output_dir = Path(new_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
     with open(item_file_path, encoding='utf-8') as fd:
         rd = csv.reader(fd, delimiter="\t", quotechar='"')
 
@@ -72,7 +77,9 @@ def ExportAlgoRec(userId_list, algo_name, external_item_ids, scores, item_file_p
 
             user_recs_df = pd.DataFrame(user_rec_list, columns = ['movieId', 'title', 'year', 'genres', 'prediction'])
             file_name = 'user_' + str(userId_list[i]) + '_' + algo_name + '_recommendations.csv'
-            user_recs_df.to_csv(Path('output/' + file_name))
+            user_recs_df.to_csv(output_dir / file_name)
+
+            fd.seek(0)
 
 
 
@@ -106,7 +113,7 @@ if __name__ == '__main__':
 
     # ModelHandler(models)
 
-    userId_list = ['0']
+    userId_list = ['0', '5']
 
     ExportRecsHandler(userId_list, 20)
 

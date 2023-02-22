@@ -1,0 +1,21 @@
+,movieId,title,year,genres,prediction
+0,11,"American President, The ",1995,Comedy Drama Romance,0.98
+1,161,Crimson Tide ,1995,Drama Thriller War,0.99
+2,165,Die Hard: With a Vengeance ,1995,Action Crime Thriller,0.96
+3,266,Legends of the Fall ,1994,Drama Romance War Western,0.97
+4,272,"Madness of King George, The ",1994,Comedy Drama,0.98
+5,339,While You Were Sleeping ,1995,Comedy Romance,0.99
+6,356,Forrest Gump ,1994,Comedy Drama Romance War,1.00
+7,377,Speed ,1994,Action Romance Thriller,0.98
+8,440,Dave ,1993,Comedy Romance,0.99
+9,454,"Firm, The ",1993,Drama Thriller,0.99
+10,477,What's Love Got to Do with It? ,1993,Drama Musical,0.96
+11,480,Jurassic Park ,1993,Action Adventure Sci-Fi Thriller,0.99
+12,500,Mrs. Doubtfire ,1993,Comedy Drama,0.98
+13,508,Philadelphia ,1993,Drama,0.98
+14,509,"Piano, The ",1993,Drama Romance,0.98
+15,539,Sleepless in Seattle ,1993,Comedy Drama Romance,0.99
+16,587,Ghost ,1990,Comedy Drama Fantasy Romance Thriller,1.00
+17,588,Aladdin ,1992,Adventure Animation Children Comedy Musical,0.99
+18,593,"Silence of the Lambs, The ",1991,Crime Horror Thriller,0.99
+19,780,Independence Day ,a.k.a. ID4,Action Adventure Sci-Fi Thriller,0.96
