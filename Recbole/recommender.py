@@ -32,10 +32,12 @@ def RunModel(data_filename, model_name, config_file_list, params_file_name, shou
     else:
         config_dict = None
 
-    config_dict = None
-    
-    run_recbole(dataset=data_filename, model=model_name, config_file_list=[config_file_list],
-                config_dict = config_dict, saved=should_save)
+    with open(Path(config_file_list)) as config_file:
+            config_file = yaml.full_load(config_file)
+
+    config_dict = {**config_dict, **config_file}
+
+    run_recbole(dataset=data_filename, model=model_name, config_dict = config_dict, saved=should_save)
 
 
 
@@ -118,6 +120,7 @@ if __name__ == '__main__':
             'NAIS', 'FISM', 'NGCF', 'LightGCN', 'ENMF',
             'CDAE', 'MultiVAE']
     
+    models = ['BPR']
 
     ModelHandler(models, str(dataset_name))
 

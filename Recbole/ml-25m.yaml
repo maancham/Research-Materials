@@ -7,15 +7,14 @@ load_col:
     inter: [user_id, item_id, rating, timestamp]
 
 
-dataset: ml-small
+dataset: ml-25m
 
 user_inter_num_interval: "[10,inf)"
 item_inter_num_interval: "[10,inf)"
 
-
+epochs: 500
 train_batch_size: 4096
 valid_metric: NDCG@10
-
 
 eval_args:
     split: {'RS': [8,1,1]}
@@ -23,7 +22,3 @@ eval_args:
     order: RO
     mode: full
     metrics: ['Recall', 'MRR', 'NDCG', 'Hit', 'Precision', 'MAP']
-
-
-embedding_size: 2048
-learning_rate: 0.0001
