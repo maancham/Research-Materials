@@ -14,9 +14,7 @@ import yaml
 """
 TODO:
 - add new files (run model, model names, prediction)
-- do we need fine-tuning at this stage?
 """
-
 
 
 
@@ -127,6 +125,3 @@ if __name__ == '__main__':
     # userId_list = ['0', '5']
 
     # ExportRecsHandler(userId_list, 20)
-
-
-

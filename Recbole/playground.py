@@ -24,3 +24,7 @@ params_file_dir = model_params_dir + '/' + params_file_name
 # file_name = 'user_0' + '_' + 'BPR' + '_recommendations.csv'
 # user_recs_df.to_csv(output_dir / file_name)
 
+
+
+import torch
+print(torch.cuda.is_available())
