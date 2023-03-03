@@ -62,8 +62,8 @@ if __name__ == '__main__':
 
 
     ## NeuMF => NCF
-    models = ['Pop', 'ItemKNN', 'BPR', 'NeuMF', 'DMF',
-            'NAIS', 'FISM', 'NGCF', 'LightGCN', 'ENMF',
+    models = ['Pop', 'ItemKNN', 'BPR', 'NeuMF', 'NAIS', 
+            'FISM', 'NGCF', 'LightGCN', 'ENMF',
             'CDAE', 'MultiVAE']
 
     ModelHandler(models, str(dataset_name), procs_available)
