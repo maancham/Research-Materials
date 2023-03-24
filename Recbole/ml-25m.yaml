@@ -13,7 +13,8 @@ user_inter_num_interval: "[10,inf)"
 item_inter_num_interval: "[10,inf)"
 
 epochs: 500
-train_batch_size: 4096
+train_batch_size: 8192
+eval_batch_size: 8192
 valid_metric: NDCG@10
 
 eval_args:
