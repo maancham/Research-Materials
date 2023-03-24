@@ -23,9 +23,9 @@ def ExportAlgoRec(userId_list, algo_name, external_item_ids, scores, item_file_p
     new_dir = 'output/' + algo_name
     output_dir = Path(new_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-
+    
     with open(item_file_path, encoding='utf-8') as fd:
-        rd = csv.reader(fd, delimiter="\t", quotechar='"')
+        rd = csv.reader(fd, delimiter=",", quotechar='"')
 
         for i in range(len(userId_list)):
             user_rec_list = []
@@ -39,7 +39,6 @@ def ExportAlgoRec(userId_list, algo_name, external_item_ids, scores, item_file_p
                     new_row = row
                     new_row.append(rec_item_scores[rec_items.index(row[0])])
                     user_rec_list.append(new_row)
-            
 
             user_recs_df = pd.DataFrame(user_rec_list, columns = ['movieId', 'title', 'year', 'genres', 'prediction'])
             file_name = 'user_' + str(userId_list[i]) + '_' + algo_name + '_recommendations.csv'
